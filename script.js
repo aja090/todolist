@@ -8,24 +8,7 @@ let day = today.getDate() // استخراج اليوم من التاريخ ال�
 let month = today.getMonth() + 1 // استخراج الشهر (يبدأ من 0 لذا نضيف 1)
 let year = today.getFullYear() // استخراج السنة
 
-// جلب المهام من Local Storage أو تعيين قائمة افتراضية إذا لم تكن موجودة
-let tasks = JSON.parse(localStorage.getItem("tasks")) || [
-    // {
-    //     "name": "امتحان كلية",
-    //     "date": `${day}/${month}/${year}`,
-    //     "isDone": false
-    // },
-    // {
-    //     "name": "بحث تخرج",
-    //     "date": `${day}/${month}/${year}`,
-    //     "isDone": false
-    // },
-    // {
-    //     "name": "الكورس البرمجي",
-    //     "date": `${day}/${month}/${year}`,
-    //     "isDone": false
-    // }
-]
+let tasks = JSON.parse(localStorage.getItem("tasks")) || []
 
 // دالة لحفظ المهام في Local Storage
 function saveTasksToLocalStorage() {
