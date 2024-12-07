@@ -1,0 +1,203 @@
+@import url('https://fonts.googleapis.com/css2?family=Almarai:wght@300;400;700;800&display=swap');
+
+:root {
+    --blue: #1D4ED8;
+    --gray: #111827;
+    --light-gray: #F3F4F6;
+    --dark-gray: #6B7280;
+}
+
+* {
+    font-family: 'Almarai', sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.container {
+    width: 100%;
+    min-height: 100vh;
+    background-color: var(--gray);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 2rem;
+    padding: 2rem 1rem;
+}
+
+.title {
+    font-size: 2rem;
+    margin-top: 2rem;
+    color: var(--light-gray);
+}
+
+.empty-message {
+    text-align: center;
+    background-color: var(--dark-gray);
+    color: var(--light-gray);
+    border-radius: 10px;
+    padding: 2rem;
+    margin-top: 1rem;
+    font-size: 1.2rem;
+    font-weight: bold;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+    transition: all 0.3s ease;
+}
+
+.empty-message:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+    transform: scale(1.02);
+}
+
+.todo-list {
+    list-style: none;
+    width: 70%;
+    max-width: 800px;
+    border-radius: 10px;
+    padding: 2rem 1rem;
+    background-color: #1F2937;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+/* ===== تصميم المهمة ===== */
+.todo {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+    gap: 0.5rem;
+    padding: 1rem;
+    background-color: var(--dark-gray);
+    border-radius: 10px;
+    border-bottom: var(--blue) 2px solid;
+    transition: all 0.2s ease-in-out;
+}
+
+.todo h1 {
+    margin: 0;
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: var(--light-gray);
+}
+
+.todo .date {
+    color: #D1D5DB;
+    font-size: 0.9rem;
+    text-align:right;
+    flex-basis: 100%;
+    /* يجعل التاريخ يشغل العرض بالكامل عند الحاجة */
+}
+
+.todo .btn {
+    display: flex;
+    gap: 0.5rem;
+    flex-wrap: wrap;
+}
+
+.finish,
+.delete,
+.edit {
+    font-size: 1.2rem;
+    width: 3rem;
+    height: 3rem;
+    border: none;
+    border-radius: 50%;
+    cursor: pointer;
+    transition: all 0.2s;
+}
+
+.edit:hover {
+    background-color: #1d4fd892;
+    border: rgba(0, 0, 255, 0.649) 1px solid;
+}
+
+.finish:hover {
+    background-color: #22c55e70;
+    border: #22C55E 1px solid;
+}
+
+.delete:hover {
+    background-color: #ef444434;
+    border: #EF4444 1px solid;
+}
+
+.add-todo {
+    padding: 1rem 3rem;
+    background-color: var(--blue);
+    color: var(--light-gray);
+    border: none;
+    border-radius: 10px;
+    font-size: 1.5rem;
+    cursor: pointer;
+    transition: all 0.2s;
+}
+
+.add-todo:hover {
+    background-color: #2b3cbb;
+}
+
+.add-todo:active,
+.edit:active,
+.finish:active,
+.delete:active {
+    transform: scale(0.9);
+}
+
+/* ===== حالة المهمة المكتملة ===== */
+.done {
+    background-color: #22c55e70;
+    border-bottom: #22C55E 2px solid;
+}
+
+.closeFinish {
+    background-color: #22c55e70;
+    color: #ffffff;
+    font-size: 0.8rem;
+    border: #22C55E 1px solid;
+}
+
+/* ===== تصميم متجاوب ===== */
+@media (max-width: 768px) {
+    .empty-message {
+        font-size: 1rem; 
+        padding: 1.5rem; 
+    }
+    .todo {
+        flex-direction: column;
+        gap: 1rem;
+    }
+
+    .todo .btn {
+        width: 100%;
+        justify-content: space-between;
+    }
+
+    .todo .date {
+        text-align: left;
+    }
+}
+
+
+
+@media (max-width: 480px) {
+    .empty-message {
+        font-size: 0.9rem;
+        padding: 1rem;
+    }
+    .todo {
+        gap: 1rem;
+        padding: 0.8rem;
+    }
+
+    .todo .btn {
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 0.5rem;
+    }
+
+    .todo .date {
+        font-size: 0.8rem;
+    }
+}
